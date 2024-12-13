@@ -2,16 +2,9 @@
  * Inspiration: https://dribbble.com/shots/8257559-Movie-2-0
  *
  */
-import { Image, StyleSheet } from "react-native";
+import { Image, StatusBar, StyleSheet } from "react-native";
 import * as React from "react";
-import {
-  StatusBar,
-  Text,
-  View,
-  FlatList,
-  Dimensions,
-  Animated,
-} from "react-native";
+import { Text, View, FlatList, Dimensions, Animated } from "react-native";
 import { getMovies } from "../api";
 import Genres from "@/components/Genres";
 import Rating from "@/components/Rating";
