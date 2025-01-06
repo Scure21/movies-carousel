@@ -2,7 +2,11 @@ import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function Rating({ rating }) {
+interface RatingProps {
+  rating: number;
+}
+
+export default function Rating({ rating }: RatingProps) {
   const filledStars = Math.floor(rating / 2);
   const maxStars = Array(5 - filledStars).fill("staro");
   const r = [...Array(filledStars).fill("star"), ...maxStars];

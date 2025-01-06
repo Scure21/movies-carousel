@@ -1,7 +1,32 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Genres({ genres }) {
+type Genres =
+  | "Adventure"
+  | "Fantasy"
+  | "Animation"
+  | "Drama"
+  | "Horror"
+  | "Action"
+  | "Comedy"
+  | "History"
+  | "Western"
+  | "Thriller"
+  | "Crime"
+  | "Documentary"
+  | "Science Fiction"
+  | "Mystery"
+  | "Music"
+  | "Romance"
+  | "Family"
+  | "War"
+  | "TV Movie";
+
+interface GenresProps {
+  genres: Genres[];
+}
+
+export default function Genres({ genres }: GenresProps) {
   return (
     <View style={styles.genres}>
       {genres.map((genre, i) => {
