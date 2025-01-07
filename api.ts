@@ -1,8 +1,5 @@
 import { API_KEY } from "./config";
-
-type Genre = {
-  [key: number]: string;
-};
+import { ApiMovie, Genre, Movie } from "./types";
 
 const genres: Genre = {
   12: "Adventure",
@@ -34,20 +31,9 @@ const getImagePath = (path: string) =>
 const getBackdropPath = (path: string) =>
   `https://image.tmdb.org/t/p/w370_and_h556_multi_faces${path}`;
 
-type Movie = {
-  id: number;
-  original_title: string;
-  poster_path: string;
-  backdrop_path: string;
-  vote_average: number;
-  overview: string;
-  release_date: string;
-  genre_ids: number[];
-};
-
 export const getMovies = async () => {
   const { results } = await fetch(API_URL).then((x) => x.json());
-  const movies = results.map(
+  const movies: Movie[] = results.map(
     ({
       id,
       original_title,
@@ -57,7 +43,7 @@ export const getMovies = async () => {
       overview,
       release_date,
       genre_ids,
-    }: Movie) => ({
+    }: ApiMovie) => ({
       key: id,
       title: original_title,
       poster: getImagePath(poster_path),
