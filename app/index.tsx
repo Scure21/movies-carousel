@@ -10,7 +10,10 @@ import Genres from "@/components/Genres";
 import Rating from "@/components/Rating";
 import { Loading } from "@/components/Loading";
 import { Backdrop } from "@/components/Backdrop";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import {
+  GestureHandlerRootView,
+  Pressable,
+} from "react-native-gesture-handler";
 import {
   BottomSheetModal,
   BottomSheetView,
@@ -19,6 +22,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import { colors } from "@/theme/colors";
 import { Movie } from "@/types";
+import { router } from "expo-router";
 
 const { width, height } = Dimensions.get("window");
 
@@ -59,7 +63,7 @@ export default function App() {
 
   // FlatList renderItem callback
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {
-    const { title, poster, genres, description, rating } = item;
+    const { key, title, poster, genres, description, rating } = item;
 
     if (!poster) {
       return <View style={{ width: EMPTY_ITEM_SIZE }} />;
@@ -76,29 +80,39 @@ export default function App() {
       outputRange: [100, 50, 100],
     });
 
+    // TODO: Make this items pressable to open a modal with more details. Move the image to the background.
     return (
-      <View style={{ width: ITEM_SIZE }}>
-        <Animated.View
-          style={{
-            marginHorizontal: SPACING,
-            padding: SPACING * 2,
-            alignItems: "center",
-            transform: [{ translateY }],
-            backgroundColor: "white",
-            borderRadius: 34,
-          }}
-        >
-          <Image source={{ uri: poster }} style={styles.posterImage} />
-          <Text style={{ fontSize: 24 }} numberOfLines={1}>
-            {title}
-          </Text>
-          {rating && <Rating rating={rating} />}
-          {genres && <Genres genres={genres} />}
-          <Text style={{ fontSize: 12 }} numberOfLines={3}>
-            {description}
-          </Text>
-        </Animated.View>
-      </View>
+      <Pressable
+        onPress={() => {
+          router.navigate({
+            pathname: "/modal",
+            params: { key: JSON.stringify(key) },
+          });
+        }}
+      >
+        <View style={{ width: ITEM_SIZE }}>
+          <Animated.View
+            style={{
+              marginHorizontal: SPACING,
+              padding: SPACING * 2,
+              alignItems: "center",
+              transform: [{ translateY }],
+              backgroundColor: "white",
+              borderRadius: 34,
+            }}
+          >
+            <Image source={{ uri: poster }} style={styles.posterImage} />
+            <Text style={{ fontSize: 24 }} numberOfLines={1}>
+              {title}
+            </Text>
+            {rating && <Rating rating={rating} />}
+            {genres && <Genres genres={genres} />}
+            <Text style={{ fontSize: 12 }} numberOfLines={3}>
+              {description}
+            </Text>
+          </Animated.View>
+        </View>
+      </Pressable>
     );
   };
 

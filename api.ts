@@ -57,3 +57,24 @@ export const getMovies = async () => {
 
   return movies;
 };
+
+export const getMovieDetails = async (id: number) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+  ).then((x) => x.json());
+
+  const movie = {
+    key: results.id,
+    title: results.original_title,
+    poster: getImagePath(results.poster_path),
+    backdrop: getBackdropPath(results.backdrop_path),
+    rating: results.vote_average,
+    description: results.overview,
+    releaseDate: results.release_date,
+    genres: results.genres.map(
+      (genre: { id: number; name: string }) => genre.name
+    ),
+  };
+
+  return movie;
+};

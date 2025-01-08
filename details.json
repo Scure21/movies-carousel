@@ -1,0 +1,116 @@
+{
+  "adult": false,
+  "backdrop_path": "/sQbFupSWM9wUdPj96NZNUOFSP5.jpg",
+  "belongs_to_collection": {
+    "backdrop_path": "/9RbOJOG3qb9naM5sZDsRaUdNw5x.jpg",
+    "id": 70764,
+    "name": "Largo Winch Collection",
+    "poster_path": "/bpUPREscFpjllSnPR28UW6FdFEq.jpg"
+  },
+  "budget": 17000000,
+  "genres": [
+    { "id": 28, "name": "Action" },
+    { "id": 12, "name": "Adventure" },
+    { "id": 53, "name": "Thriller" }
+  ],
+  "homepage": "",
+  "id": 1000075,
+  "imdb_id": "tt23049322",
+  "origin_country": ["BE", "US", "FR"],
+  "original_language": "fr",
+  "original_title": "Largo Winch: Le prix de l'argent",
+  "overview": "Largo Winch, devastated by the kidnapping of his son, realizes that if he finds those responsible for his bankruptcy, maybe he'll see his son again.",
+  "popularity": 885.389,
+  "poster_path": "/myS41ZUmFvslkT8LeD2irAKxyrf.jpg",
+  "production_companies": [
+    {
+      "id": 6750,
+      "logo_path": null,
+      "name": "Pan-Européenne",
+      "origin_country": "FR"
+    },
+    {
+      "id": 3040,
+      "logo_path": "/aZww3B7RCFAMV1qrDZDrdeB8qcI.png",
+      "name": "Versus Production",
+      "origin_country": "BE"
+    },
+    {
+      "id": 356,
+      "logo_path": "/9tW5wZEGotn1Ei5pErA88m47XiD.png",
+      "name": "TF1 Films Production",
+      "origin_country": "FR"
+    },
+    {
+      "id": 792,
+      "logo_path": "/cRhBQP1FFNugNxKkO1pUgeD2Rkr.png",
+      "name": "RTBF",
+      "origin_country": "BE"
+    },
+    {
+      "id": 24430,
+      "logo_path": "/7ZIwXTA5QVD6feybiITOL6OYJPJ.png",
+      "name": "BeTV",
+      "origin_country": "BE"
+    },
+    {
+      "id": 92187,
+      "logo_path": "/yrAyYme1zlZtHuhlWS3DlFAj762.png",
+      "name": "Proximus",
+      "origin_country": "BE"
+    },
+    {
+      "id": 104,
+      "logo_path": "/9aotxauvc9685tq9pTcRJszuT06.png",
+      "name": "Canal+",
+      "origin_country": "FR"
+    },
+    {
+      "id": 169055,
+      "logo_path": null,
+      "name": "la Fédération Wallonie- Bruxelles",
+      "origin_country": ""
+    },
+    {
+      "id": 10611,
+      "logo_path": "/zQ4fGaEnNkWfSzyygXRcUZwPmDG.png",
+      "name": "Ciné+",
+      "origin_country": "FR"
+    },
+    {
+      "id": 124138,
+      "logo_path": "/bcJuzZ0gnOUGWg52haT0ueAFHlP.png",
+      "name": "screen.brussels",
+      "origin_country": "BE"
+    },
+    {
+      "id": 856,
+      "logo_path": "/3tfzS2CrX6Ntbu927XzHXEPDA6y.png",
+      "name": "Wild Bunch",
+      "origin_country": "FR"
+    },
+    {
+      "id": 12352,
+      "logo_path": "/fkIacb6MddD6trIWamr33SIcUAn.png",
+      "name": "Wallimage",
+      "origin_country": "BE"
+    }
+  ],
+  "production_countries": [
+    { "iso_3166_1": "BE", "name": "Belgium" },
+    { "iso_3166_1": "FR", "name": "France" }
+  ],
+  "release_date": "2024-07-31",
+  "revenue": 0,
+  "runtime": 100,
+  "spoken_languages": [
+    { "english_name": "English", "iso_639_1": "en", "name": "English" },
+    { "english_name": "French", "iso_639_1": "fr", "name": "Français" }
+  ],
+  "status": "Released",
+  "tagline": "",
+  "title": "The Price of Money: A Largo Winch Adventure",
+  "video": false,
+  "vote_average": 5.9,
+  "vote_count": 77
+}
