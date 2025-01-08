@@ -43,7 +43,7 @@ const Modal = () => {
         useNativeDriver: true,
         tension: 40,
         friction: 10,
-        delay: 50,
+        delay: 20,
       }),
     ]).start();
   }, [parsedKey]);
@@ -102,7 +102,10 @@ const Modal = () => {
           }}
         >
           {/* Title */}
-          <Text style={{ fontSize: 24 }} numberOfLines={3}>
+          <Text
+            style={{ fontSize: 24, fontFamily: "Montserrat" }}
+            numberOfLines={3}
+          >
             {title}
           </Text>
 
@@ -113,7 +116,13 @@ const Modal = () => {
           {rating && <Rating rating={rating} />}
 
           {/* Director */}
-          <Text style={{ fontSize: 12, marginVertical: 10 }}>
+          <Text
+            style={{
+              fontSize: 12,
+              marginVertical: 10,
+              fontFamily: "Montserrat",
+            }}
+          >
             Director / {directors}
           </Text>
 
@@ -123,7 +132,9 @@ const Modal = () => {
           {/* Description */}
           <View style={{ marginTop: 20 }}>
             <Text style={styles.heading}>Description</Text>
-            <Text style={{ fontSize: 12 }}>{description}</Text>
+            <Text style={{ fontSize: 12, fontFamily: "Montserrat" }}>
+              {description}
+            </Text>
           </View>
         </Animated.View>
       </ScrollView>
@@ -143,6 +154,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     marginLeft: 10,
+    fontFamily: "Montserrat",
   },
   contentContainer: {
     flex: 1,

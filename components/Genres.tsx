@@ -46,5 +46,6 @@ const styles = StyleSheet.create({
   },
   genreText: {
     fontSize: 9,
+    fontFamily: "Montserrat",
   },
 });

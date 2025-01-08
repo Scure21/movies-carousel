@@ -102,12 +102,21 @@ export default function App() {
             }}
           >
             <Image source={{ uri: poster }} style={styles.posterImage} />
-            <Text style={{ fontSize: 24 }} numberOfLines={1}>
+            <Text
+              style={{ fontSize: 24, fontFamily: "Montserrat" }}
+              numberOfLines={1}
+            >
               {title}
             </Text>
             {rating && <Rating rating={rating} />}
             {genres && <Genres genres={genres} />}
-            <Text style={{ fontSize: 12 }} numberOfLines={3}>
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Montserrat",
+              }}
+              numberOfLines={3}
+            >
               {description}
             </Text>
           </Animated.View>
