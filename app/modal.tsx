@@ -13,6 +13,7 @@ import { getMovieDetails } from "@/api";
 import Rating from "@/components/Rating";
 import Genres from "@/components/Genres";
 import Cast from "@/components/Cast";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 const { width, height } = Dimensions.get("window");
 
@@ -60,8 +61,8 @@ const Modal = () => {
     details;
 
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.contentContainer}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollContainer}>
         {/* Backdrop with linear gradient */}
         <View
           style={{
@@ -127,7 +128,7 @@ const Modal = () => {
           </Text>
 
           {/* Cast */}
-          <Cast cast={cast} />
+          {cast.length ? <Cast cast={cast} /> : null}
 
           {/* Description */}
           <View style={{ marginTop: 20 }}>
@@ -138,7 +139,7 @@ const Modal = () => {
           </View>
         </Animated.View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -147,7 +148,8 @@ export default Modal;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: "100%",
+    height: height,
+    backgroundColor: "white",
   },
   heading: {
     fontSize: 18,
@@ -156,12 +158,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontFamily: "Montserrat",
   },
-  contentContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  scrollContainer: {
     backgroundColor: "white",
-    paddingBottom: 100,
   },
   posterImage: {
     width: "100%",

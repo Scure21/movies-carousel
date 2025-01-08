@@ -28,11 +28,14 @@ const Cast = ({ cast }: CastProps) => {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {cast.map((person, index) => (
           <View key={index} style={styles.castItem}>
-            <Image
-              source={{ uri: person.image }}
-              style={styles.castImage}
-              // defaultSource={require("../assets/placeholder.png")}
-            />
+            {person.image ? (
+              <Image source={{ uri: person.image }} style={styles.castImage} />
+            ) : (
+              <Image
+                source={require("../assets/avatar-placeholder.png")}
+                style={styles.castImage}
+              />
+            )}
             <Text style={styles.actorName} numberOfLines={2}>
               {person.name}
             </Text>

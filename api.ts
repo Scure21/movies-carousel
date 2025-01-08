@@ -96,7 +96,7 @@ export const getMovieDetails = async (id: number) => {
     cast: cast.map(
       (actor: { name: string; profile_path: string; character: string }) => ({
         name: actor.name,
-        image: getImagePath(actor.profile_path),
+        image: actor.profile_path ? getImagePath(actor.profile_path) : null,
         character: actor.character,
       })
     ),
