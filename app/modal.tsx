@@ -21,7 +21,6 @@ const ITEM_SIZE = width * 0.72;
 const Modal = () => {
   const { key } = useLocalSearchParams();
   const parsedKey = JSON.parse(key as string);
-
   const slideAnim = useRef(new Animated.Value(height)).current;
 
   const [details, setDetails] = React.useState<any>(null);
@@ -30,7 +29,6 @@ const Modal = () => {
     const modeDetails = async () => {
       try {
         const details = await getMovieDetails(parsedKey);
-        console.log("details", details);
         setDetails(details);
       } catch (error) {
         console.log("error", error);
@@ -43,8 +41,9 @@ const Modal = () => {
       Animated.spring(slideAnim, {
         toValue: 0,
         useNativeDriver: true,
-        tension: 30,
-        friction: 7,
+        tension: 40,
+        friction: 10,
+        delay: 50,
       }),
     ]).start();
   }, [parsedKey]);
