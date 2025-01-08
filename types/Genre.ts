@@ -25,4 +25,6 @@ export type Genres =
 
 export type GenresProps = {
   genres: Genres[];
+  borderColor?: string;
+  textColor?: string;
 };

@@ -1,1 +1,9 @@
-export const API_KEY = "401d99613457b207ed11170ac072437a";
+export const API_KEY = process.env.API_KEY;
+
+export const TOKEN = process.env.TOKEN;
+
+if (!API_KEY || !TOKEN) {
+  throw new Error(
+    "Missing required environment variables. Please check your .env file."
+  );
+}

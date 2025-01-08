@@ -1,4 +1,4 @@
-import { API_KEY } from "./config";
+import { API_KEY, TOKEN } from "./config";
 import { ApiMovie, Genre, Movie } from "./types";
 
 const genres: Genre = {
@@ -60,8 +60,24 @@ export const getMovies = async () => {
 
 export const getMovieDetails = async (id: number) => {
   const results = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
-  ).then((x) => x.json());
+    `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((x) => x.json())
+    .catch((error) => console.log("Error getting movie details: ", error));
+
+  const directors = results.credits.crew.filter(
+    (person: { job: string }) => person.job === "Director"
+  );
+
+  // get the first 5 cast members
+  const cast = results.credits.cast.slice(0, 5);
 
   const movie = {
     key: results.id,
@@ -73,6 +89,16 @@ export const getMovieDetails = async (id: number) => {
     releaseDate: results.release_date,
     genres: results.genres.map(
       (genre: { id: number; name: string }) => genre.name
+    ),
+    directors:
+      directors.map((director: { name: string }) => director.name)[0] ||
+      "Unknown",
+    cast: cast.map(
+      (actor: { name: string; profile_path: string; character: string }) => ({
+        name: actor.name,
+        image: getImagePath(actor.profile_path),
+        character: actor.character,
+      })
     ),
   };
 

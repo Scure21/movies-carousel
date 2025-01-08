@@ -1,0 +1,38 @@
+{
+  "backdrop": "https://image.tmdb.org/t/p/w370_and_h556_multi_faces/6amNYUYvoKsZbg8vE00Yzt9Xn7H.jpg",
+  "cast": [
+    {
+      "character": "Wade Wilson / Deadpool / Nicepool",
+      "image": "https://image.tmdb.org/t/p/w440_and_h660_face/4SYTH5FdB0dAORV98Nwg3llgVnY.jpg",
+      "name": "Ryan Reynolds"
+    },
+    {
+      "character": "Logan / Wolverine",
+      "image": "https://image.tmdb.org/t/p/w440_and_h660_face/4Xujtewxqt6aU0Y81tsS9gkjizk.jpg",
+      "name": "Hugh Jackman"
+    },
+    {
+      "character": "Cassandra Nova",
+      "image": "https://image.tmdb.org/t/p/w440_and_h660_face/wqGOVOsHzZaHeHymIS40elGCnY0.jpg",
+      "name": "Emma Corrin"
+    },
+    {
+      "character": "Mr. Paradox",
+      "image": "https://image.tmdb.org/t/p/w440_and_h660_face/2FF3Yjxd7DYR4EIJL6s2GpKDMkJ.jpg",
+      "name": "Matthew Macfadyen"
+    },
+    {
+      "character": "Laura / X-23",
+      "image": "https://image.tmdb.org/t/p/w440_and_h660_face/g325OIjIHrFr0te8ewPfhKQ2SKj.jpg",
+      "name": "Dafne Keen"
+    }
+  ],
+  "description": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+  "directors": "Shawn Levy",
+  "genres": ["Action", "Comedy", "Science Fiction"],
+  "key": 533535,
+  "poster": "https://image.tmdb.org/t/p/w440_and_h660_face/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+  "rating": 7.653,
+  "releaseDate": "2024-07-24",
+  "title": "Deadpool & Wolverine"
+}

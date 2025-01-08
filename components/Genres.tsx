@@ -2,13 +2,25 @@ import { GenresProps } from "@/types";
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Genres({ genres }: GenresProps) {
+export default function Genres({
+  genres,
+  borderColor,
+  textColor,
+}: GenresProps) {
+  const borderColorStyle = borderColor || "#ccc";
+  const textColorStyle = textColor || "#212529";
+
   return (
     <View style={styles.genres}>
       {genres.map((genre, i) => {
         return (
-          <View key={genre} style={styles.genre}>
-            <Text style={styles.genreText}>{genre}</Text>
+          <View
+            key={genre}
+            style={[styles.genre, { borderColor: borderColorStyle }]}
+          >
+            <Text style={[styles.genreText, { color: textColorStyle }]}>
+              {genre}
+            </Text>
           </View>
         );
       })}
@@ -34,6 +46,5 @@ const styles = StyleSheet.create({
   },
   genreText: {
     fontSize: 9,
-    opacity: 0.4,
   },
 });
